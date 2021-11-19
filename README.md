@@ -1,6 +1,6 @@
 # Two-Phase Partitioner
 
-The implementation of Two-Phase Streaming Edge Partitioner. 
+The implementation of Two-Phase Streaming, an out-of-core edge partitioner. 
 
 In this repo, we also implemented the below methods and a tool in C++.
 * High Degrees Replicated First (HDRF) - Based on the following [publication](http://midlab.diag.uniroma1.it/articoli/PQDKI15CIKM.pdf): F. Petroni, L. Querzoni, G. Iacoboni, K. Daudjee and S. Kamali: "Hdrf: Efficient stream-based partitioning for power-law graphs". CIKM, 2015.
