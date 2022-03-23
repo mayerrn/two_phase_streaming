@@ -1,6 +1,8 @@
 # Two-Phase Partitioner
 
-The implementation of Two-Phase Streaming, an out-of-core edge partitioner. 
+The implementation of Two-Phase Streaming, an out-of-core edge partitioner. The work is published at IEEE ICDE 2022:
+
+Ruben Mayer, Kamil Orujzade, and Hans-Arno Jacobsen. “Out-of-Core Edge Partitioning at Linear Run-Time”. In Proceedings of the 2022 IEEE 38th International Conference on Data Engineering (ICDE ‘22). 14 pages.
 
 In this repo, we also implemented the below methods and a tool in C++.
 * High Degrees Replicated First (HDRF) - Based on the following [publication](http://midlab.diag.uniroma1.it/articoli/PQDKI15CIKM.pdf): F. Petroni, L. Querzoni, G. Iacoboni, K. Daudjee and S. Kamali: "Hdrf: Efficient stream-based partitioning for power-law graphs". CIKM, 2015.
@@ -48,8 +50,7 @@ Note: `-DSTATS` flag helps to print the replication factor and balancing value o
 Parameters:
 * `filename`: path to the edge list file.
 * `p`: the number of partitions that the graph will be divided into.
-* `prepartitioner_type`: name of the clustering algorithm as a pre-partitioner. streamcom or rabbit. default: streamcom.
-    * Please note that to be able to use Rabbit Order clustering, you need to follow the instructions in [Rabbit Order Integration](#rabbit) section.
+* `prepartitioner_type`: name of the clustering algorithm as a pre-partitioner. default: streamcom.
 
 Optional:
 * `use_hdrf`: use HDRF scoring instead of linear scoring for the second phase
@@ -94,7 +95,7 @@ DBH example:
 ./dbh -filename ../sample/input.txt -p 4
 ```
 
-Note: `twophasepartitioner` and `dbh` programs  uses converter library to convert a given input file to the binary format to increase the efficiency of read-time and rename the vertex ids to ascending order of numerical values starting from 0. You can find the converted file in the same directory as the original input file. The extension of the binary file is .binedgelist. Y
+Note: `twophasepartitioner` and `dbh` programs  uses converter library to convert a given input file to the binary format to increase the efficiency of read-time and rename the vertex ids to ascending order of numerical values starting from 0. You can find the converted file in the same directory as the original input file. The extension of the binary file is .binedgelist.
 
 
 
